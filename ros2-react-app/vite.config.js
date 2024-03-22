@@ -1,8 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// vite.config.js
-export default {
+export default defineConfig({
   // ... other configurations
 
   optimizeDeps: {
@@ -14,6 +13,9 @@ export default {
   esbuild: {
     jsxFactory: 'React.createElement',
     jsxFragment: 'React.Fragment',
-    base: '/Rosonweb/'
+    
   },
-};
+
+  plugins: [react()],
+  base: '/Rosonweb/'
+});
